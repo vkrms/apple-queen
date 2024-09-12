@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-import { GoogleLogin } from '@react-oauth/google'
+import { CredentialResponse, GoogleLogin } from '@react-oauth/google'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  const responseMessage = (response) => {
+  const responseMessage = (response: CredentialResponse) => {
     console.log(response);
   };
-  const errorMessage = (error) => {
+  const errorMessage = (error?: Error) => {
     console.log(error);
   };
 
